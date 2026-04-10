@@ -1,0 +1,4 @@
+Pentru a folosi aplicatia descarcat si rulati codul cu ajutorul butonului verde .
+Apoi alegeti ce doriti sa faceti apasand pe butoane care au mai multe utilizari 
+in functie de fiecare buton in parte si introduceti date corespunztoare .
+Pentru a iesi din aplicatie apasati butonul de x.

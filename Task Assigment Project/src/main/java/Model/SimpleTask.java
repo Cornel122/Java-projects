@@ -1,0 +1,40 @@
+package Model;
+
+import java.io.Serializable;
+
+public class SimpleTask extends Task implements Serializable{
+    private static final long serialVersionUID = 1L;
+    private int startHour;
+    private int endHour;
+    public int getStartHour() {
+        return startHour;
+
+    }
+    public void setStartHour(int startHour) {
+        this.startHour = startHour;
+    }
+    public int getEndHour() {
+        return endHour;
+
+    }
+    public void setEndHour(int endHour) {
+        this.endHour = endHour;
+    }
+    public SimpleTask(int idTask,String statusTask ,int startHour, int endHour) {
+        super(idTask,statusTask);
+        this.startHour = startHour;
+        this.endHour = endHour;
+
+    }
+    //verific starea unui task
+    public boolean checkStatus()
+    {         if(getStatusTask().equalsIgnoreCase("Uncompleted"))
+                return false;
+        return true;
+
+    }
+    public int estimateDuration(){
+        return endHour - startHour;
+    }
+
+}
