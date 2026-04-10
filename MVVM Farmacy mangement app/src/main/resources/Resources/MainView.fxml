@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="View.MainView">
+
+    <TabPane>
+
+        <Tab text="Farmacii">
+            <VBox spacing="5">
+                <TextField fx:id="farmNume" promptText="Nume"/>
+                <TextField fx:id="farmAdr" promptText="Adresa"/>
+
+                <HBox spacing="5">
+                    <Button text="Add" onAction="#addFarm"/>
+                    <Button text="Update" onAction="#updateFarm"/>
+                    <Button text="Delete" onAction="#deleteFarm"/>
+                    <Button text="Afisare Farmacii" onAction="#loadFarm"/>
+                </HBox>
+
+                <Label fx:id="errorLabel" textFill="red"/>
+
+                <TableView fx:id="farmTable">
+                    <columns>
+                        <TableColumn fx:id="colFarmId" text="ID"/>
+                        <TableColumn fx:id="colFarmNume" text="Nume"/>
+                        <TableColumn fx:id="colFarmAdr" text="Adresa"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <Tab text="Medicamente">
+            <VBox spacing="5">
+                <TextField fx:id="medDen" promptText="Denumire"/>
+                <TextField fx:id="medProd" promptText="Producator"/>
+                <TextField fx:id="medImg" promptText="Path imagine"/>
+
+                <HBox spacing="5">
+                    <Button text="Add" onAction="#addMed"/>
+                    <Button text="Update" onAction="#updateMed"/>
+                    <Button text="Delete" onAction="#deleteMed"/>
+                    <Button text="Afisare Medicamente" onAction="#loadMed"/>
+                </HBox>
+
+                <Label fx:id="errorLabel" textFill="red"/>
+
+                <ImageView fx:id="imageView" fitWidth="150" fitHeight="150"/>
+
+                <TableView fx:id="medTable">
+                    <columns>
+                        <TableColumn fx:id="colMedId" text="ID"/>
+                        <TableColumn fx:id="colMedDen" text="Denumire"/>
+                        <TableColumn fx:id="colMedProd" text="Producator"/>
+                        <TableColumn fx:id="colMedImg" text="Imagine"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <Tab text="Stoc">
+            <VBox spacing="5">
+
+                <ComboBox fx:id="farmCombo"/>
+                <ComboBox fx:id="medCombo"/>
+
+                <TextField fx:id="cantitate" promptText="Cantitate"/>
+                <TextField fx:id="valabilitate" promptText="YYYY-MM-DD"/>
+                <CheckBox fx:id="disponibil" text="Disponibil"/>
+
+                <Button text="Add Stoc" onAction="#addStoc"/>
+
+                <TextField fx:id="search" promptText="Search"/>
+                <Button text="Search" onAction="#search"/>
+
+                <TextField fx:id="filterProd" promptText="Producator"/>
+                <Button text="Filter Prod" onAction="#filterProd"/>
+
+                <TextField fx:id="filterDate" promptText="YYYY-MM-DD"/>
+                <Button text="Filter Date" onAction="#filterDate"/>
+
+                <ComboBox fx:id="dispFilter"/>
+
+                <Button text="Show All" onAction="#showStoc"/>
+
+                <Label fx:id="errorLabel" textFill="red"/>
+
+                <TableView fx:id="stocTable">
+                    <columns>
+                        <TableColumn fx:id="colFarm" text="Farmacie"/>
+                        <TableColumn fx:id="colDen" text="Medicament"/>
+                        <TableColumn fx:id="colProd" text="Producator"/>
+                        <TableColumn fx:id="colCant" text="Cantitate"/>
+                        <TableColumn fx:id="colDisp" text="Disponibil"/>
+                        <TableColumn fx:id="colVal" text="Valabilitate"/>
+                    </columns>
+                </TableView>
+
+                <ImageView fx:id="stocImageView" fitWidth="150" fitHeight="150"/>
+
+            </VBox>
+        </Tab>
+    </TabPane>
+
+</VBox>
